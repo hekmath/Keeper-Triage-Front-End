@@ -1,3 +1,4 @@
+// types/chat.ts
 export interface Message {
   id: string;
   sessionId: string;
@@ -62,4 +63,41 @@ export interface SystemStats {
   };
   avgWaitTime?: number;
   messagesLast24h?: number;
+  knowledgeBase?: {
+    totalDocuments: number;
+    avgContentLength: number;
+    recentDocuments: number;
+  };
+}
+
+// NEW: Document types for RAG
+export interface KnowledgeDocument {
+  id: number;
+  title: string;
+  content: string;
+  metadata: Record<string, any>;
+  createdAt: string;
+  updatedAt: string;
+  contentPreview?: string;
+  contentLength?: number;
+}
+
+export interface NewKnowledgeDocument {
+  title: string;
+  content: string;
+  metadata?: Record<string, any>;
+}
+
+export interface DocumentSearchResult {
+  id: number;
+  title: string;
+  content: string;
+  similarity: number;
+  metadata: Record<string, any>;
+}
+
+export interface DocumentStats {
+  totalDocuments: number;
+  avgContentLength: number;
+  recentDocuments: number;
 }

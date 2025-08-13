@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, BarChart3, Home } from 'lucide-react';
+import { MessageCircle, BarChart3, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Navigation() {
@@ -22,6 +22,12 @@ export function Navigation() {
       label: 'Agent Dashboard',
       icon: BarChart3,
       description: 'Agent portal for handling customer requests',
+    },
+    {
+      href: '/settings',
+      label: 'Settings',
+      icon: Settings,
+      description: 'Manage knowledge base and AI settings',
     },
   ];
 
